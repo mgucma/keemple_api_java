@@ -1,0 +1,42 @@
+name: Maven Build
+
+on:
+  push:
+    branches:
+      - main
+      - devlop
+      - dev
+  pull_request:
+    branches:
+      - main
+      - devlop
+      - dev 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout repo
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Java environment
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin' # Możesz zmienić na inny, np. zulu
+
+    # Cache Maven dependencies
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven
+
+    # Run Maven build
+    - name: Build with Maven
+      run: mvn clean install
