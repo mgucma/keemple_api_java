@@ -1,0 +1,4 @@
+com\marek\GatewayDiscovery.class
+com\marek\KeempleScrapper.class
+com\marek\ConfigLoader.class
+com\marek\SeleniumScrapper.class
