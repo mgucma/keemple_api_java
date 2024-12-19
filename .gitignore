@@ -4,3 +4,6 @@
 .DS_Store
 Thumbs.db
 *.log
+/cache/
+/src/main/resources/*
+!/src/main/resources/.gitkeep
