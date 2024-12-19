@@ -5,5 +5,5 @@
 Thumbs.db
 *.log
 /cache/
-/resources/*
-!/cresources//example.conf
+/src/main/resources/*
+!/src/main/resources/.gitkeep
