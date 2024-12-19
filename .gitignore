@@ -4,3 +4,6 @@
 .DS_Store
 Thumbs.db
 *.log
+/cache/
+/resources/*
+!/cresources//example.conf
